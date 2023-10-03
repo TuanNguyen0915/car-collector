@@ -16,11 +16,15 @@ const NewCar = (props) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
+  function handleSubmit() {
+    props.handleAddCar(formData)
+  }
+
   return (
     <>
       <div className="new-car-container">
         <h1>Add Car</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input onChange={handleChange} value={formData.make} type="text" name="make" placeholder="Make" />
 
           <input onChange={handleChange} value={formData.model} type="text" name="model" placeholder="Model" />
