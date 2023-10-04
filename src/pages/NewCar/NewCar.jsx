@@ -29,7 +29,7 @@ const NewCar = (props) => {
   return (
     <>
       <div className="new-car-container">
-        <h1>Add Car</h1>
+        <h1 style={{color: formData.color}}>Add Car</h1>
         <form onSubmit={handleSubmit}>
           <input onChange={handleChange} value={formData.make} type="text" name="make" placeholder="Make" />
 
@@ -40,10 +40,12 @@ const NewCar = (props) => {
           <SketchPicker 
             color={formData.color}
             onChangeComplete={handleChangeComplete}
+            disableAlpha={true}
+            width="200"
           />
 
           <button type="submit">Add Car 🚘</button>
-          
+
         </form>
       </div>
     </>
